@@ -25,7 +25,7 @@ namespace Zork
 		{
 			Console.WriteLine("Welcome to Zork!");
 
-			const string defaultRoomsFile = "Rooms.txt";
+			const string defaultRoomsFile = "Rooms.json";
 			string roomsFilename = (args.Length > 0 ? args[(int)CommandLineArguments.RoomsFilename] : defaultRoomsFile);
 
 			InitializeRooms(roomsFilename);
@@ -113,6 +113,7 @@ namespace Zork
 
 		private static readonly Dictionary<string, Room> RoomMap;
 
+		/*
 		static Program()
 		{
 			RoomMap = new Dictionary<string, Room>();
@@ -121,6 +122,7 @@ namespace Zork
 				RoomMap[room.Name] = room;
 			}
 		}
+		*/
 
 		private enum Fields
 		{
