@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Zork
 {
+	public enum Directions
+	{
+		North,
+		South,
+		East,
+		West
+	}
 	public class Player
 	{
 		public World World { get; }

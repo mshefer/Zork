@@ -14,7 +14,7 @@ namespace Zork
 		public string Description { get; private set; }
 
 		[JsonProperty(PropertyName = "Neighbors", Order = 3)]
-		private Dictionary<Directions, Room> NeighborNames { get; private set; }
+		private Dictionary<Directions, string> NeighborNames { get; set; }
 
 		[JsonIgnore]
 		public IReadOnlyDictionary<Directions, Room> Neighbors { get; private set; }
@@ -42,7 +42,7 @@ namespace Zork
 																 let room = world.RoomsByName.GetValueOrDefault(entry.Value)
 																 where room != null
 																 select (Direction: entry.Key, Room: room))
-																 .ToDictionary(pair => pair.Direction, KeyValuePair => KeyValuePair.Room);
+																 .ToDictionary(pair => pair.Direction, pair => pair.Room);
 
 	}
 }
